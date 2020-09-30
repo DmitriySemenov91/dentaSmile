@@ -10,7 +10,13 @@ interface Props {
   time?: string;
 }
 
-const Clients: React.FC<Props> = ({ active, user, diagnostics, time }) => {
+const Clients: React.FC<Props> = ({
+  active,
+  user,
+  diagnostics,
+  time,
+  navigate,
+}) => {
   return (
     <View>
       <Pressable
@@ -19,7 +25,8 @@ const Clients: React.FC<Props> = ({ active, user, diagnostics, time }) => {
             backgroundColor: pressed ? 'rgba(210, 230, 255, 0.5)' : 'white',
           },
           styles.wrapperCustom,
-        ]}>
+        ]}
+        onPress={() => navigate.push('Details')}>
         <View style={styles.wrapper}>
           <Image
             style={styles.image}
